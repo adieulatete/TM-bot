@@ -1,0 +1,74 @@
+{% macro welcome_message() %}
+Добро пожаловать в Task Manager Bot!
+{% endmacro %}
+
+{% macro choose_action_message() %}
+Выберите действие:
+{% endmacro %}
+
+{% macro enter_task_desc_message() %}
+Введите описание задачи:
+{% endmacro %}
+
+{% macro enter_new_task_desc_message() %}
+Введите новое описание задачи:
+{% endmacro %}
+
+{% macro no_tasks_found() %}
+Задач не найдено.
+{% endmacro %}
+
+{% macro enter_due_date_message() %}
+Введите дату завершения задачи (YYYY-MM-DD-HH):
+{% endmacro %}
+
+{% macro enter_new_due_date_message() %}
+Введите новую дату завершения задачи (YYYY-MM-DD-HH):
+{% endmacro %}
+
+{% macro task_added_message(task_desc, due_date) %}
+Задача добавлена!
+
+<b>Описание</b> - {{ task_desc }}
+<b>Срок выполнения</b> - {{ due_date }}  
+{% endmacro %}
+
+{% macro task_update_message(task_desc, due_date) %}
+Задача обновлена!
+
+<b>Описание</b> - {{ task_desc }}
+<b>Срок выполнения</b> - {{ due_date }}  
+{% endmacro %}
+
+{% macro invalid_date_format_message() %}
+Неверный формат даты. Введите дату в формате YYYY-MM-DD-HH.
+{% endmacro %}
+
+{% macro past_date_error_message() %}
+Дата не может быть в прошлом.
+{% endmacro %}
+
+{% macro incorrect_data_error_message() %}
+Ошибка: некорректные данные для задачи.
+{% endmacro %}
+
+{% macro error_during_operation() %}
+Произошла ошибка при выполнении операции с задачей.
+{% endmacro %}
+
+{% macro reminder_message(task_description, due_date) %}
+Напоминание!
+Задача "{{ task_description }}"  должна быть выполнена до {{ due_date }}
+{% endmacro %}
+
+{% macro task_list_warning() %}
+Всего одна задача. Переключение недоступно.
+{% endmacro %}
+
+{% macro task_message(task_description, due_date, task_status) %}
+<b>Описание</b> - {{ task_description }}
+
+<b>Срок выполнения</b> - {{ due_date }}  
+<b>Статус</b> - {{ task_status }}
+{% endmacro %}
+

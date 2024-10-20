@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: >
+      sh -c "python -m bot.main"
+    env_file: .env
+    volumes:
+      - .:/app
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+
+  celery:
+    build: .
+    command: celery -A bot.celery worker --loglevel=info
+    volumes:
+      - .:/app
+    working_dir: /app/bot
+    depends_on:
+      - web
+      - redis
+
+  tests:
+    build: .
+    command: pytest tests
+    volumes:
+      - .:/app
+    depends_on:
+      - web

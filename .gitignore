@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# internal dir / files
+migrations/
+*.sqlite3
+.pytest_cache
+*.db
+
+# Log
+*.log
+
+# Environments
+.DS_Store
+*.code-workspace
+.env
