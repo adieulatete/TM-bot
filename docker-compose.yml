@@ -20,14 +20,18 @@ services:
     volumes:
       - .:/app
     working_dir: /app/bot
+    environment:
+      - PYTHONPATH=/app
     depends_on:
       - web
       - redis
 
   tests:
     build: .
-    command: pytest tests
+    command: sh -c "PYTHONPATH=. pytest tests/"
     volumes:
       - .:/app
     depends_on:
       - web
+      - redis
+      

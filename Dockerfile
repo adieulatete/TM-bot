@@ -18,4 +18,4 @@ RUN poetry config virtualenvs.create false
 RUN poetry install
 
 # Run tests
-RUN pytest tests/ 
+RUN PYTHONPATH=. pytest tests/

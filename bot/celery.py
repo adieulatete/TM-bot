@@ -12,8 +12,8 @@ from .templates import render_message
 
 celery_app = Celery(
     'tasks',
-    broker='redis://localhost:6379/0',
-    backend='redis://localhost:6379/0'
+    broker='redis://redis:6379/0',
+    backend='redis://redis:6379/0'
 )
 
 task_manager = TaskManager()
